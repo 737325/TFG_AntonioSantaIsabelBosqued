@@ -1,0 +1,48 @@
+.list-unstyled li {
+  display: inline-block;
+  cursor: pointer;
+}
+
+.show {
+  display: block;
+}
+
+.hide {
+  display: none;
+}
+
+.rectPlantilla {
+  position: absolute;
+  z-index: 11;
+  /* background-color:rgb(0, 255, 0); */
+}
+
+.colocadorVideo{
+  z-index: 9;
+  left:0px;
+  top:0px;
+/*   -webkit-transform: scaleX(-1);
+  transform: scaleX(-1); */
+}
+
+.salidaProveedor{
+  resize:vertical;
+}
+
+.container_centrador {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  /*-moz-transform: translateX(-50%) translateY(-50%);
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%); */
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
+}
+
+.botonNav{
+  font-size: 16pt;
+  margin: 5px;
+  height:100;
+  z-index: 1;
+}

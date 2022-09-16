@@ -1,0 +1,89 @@
+  <!--------------------------------------------------------------->
+  <!--  BLOQUE ENCARGADO DE RECOLECTAR LOS DATOS DE LA ETIQUETA  -->
+  <!--------------------------------------------------------------->
+  <canvas id=bloqueador #bloqScreen class="bloqueador" [class.show]="isBloqueado" [class.hide]="!isBloqueado"></canvas>
+  <label class="aviso" [class.show]="isBloqueado" [class.hide]="!isBloqueado">ESPERE MIENTRAS SE PROCESA LA IMAGEN</label>
+  <div id=b3>
+    <div class="topbar">
+      <img width="200vw" src="assets/logo_turomas.png" alt="Logo Empresa">
+    </div>
+
+    <h1 class="cabecera">
+      BLOQUE 2: OBTENER DATOS DE LA ETIQUETA
+    </h1>
+
+    <!-- Bloque para mostrar los datos leidos en el OCR -->
+
+    <div class="bloqueFormulario">
+      <header class="cabecera"> FORMULARIO A ENVIAR </header>
+      <form class="listado" style="text-align:right" >
+        <ul>
+          <li>
+            <label for="f_proveedor" >PROVEEDOR: </label>
+            <input class="listado" id="f_proveedor" type="font-weight-bold" value={{formulario.getProveedor()}}/>
+          </li>
+
+          <li>
+            <label for="f_producto">MATERIAL: </label>
+
+            <mat-form-field class="panelMateriales" appearance="fill">
+              <mat-select id="selector_material"  panelClass="panelMateriales" [(ngModel)]="materialElegido" name="materialElegido">
+                <mat-option *ngFor="let material of this.materiales" [value]="material.toString()">
+                  {{material}}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </li>
+
+          <li>
+            <label for="f_estante">ESTANTE: </label>
+            <!-- <input class="listado" id="f_estante" type="font-weight-bold" [value]=caballeteElegido/> -->
+
+            <mat-form-field class="panelCaballetes" appearance="fill">
+              <mat-select id="selector_caballete"  panelClass="panelCaballetes" [(ngModel)]="caballeteElegido" name="caballeteElegido">
+                <mat-option *ngFor="let caballete of this.caballetes" [value]="caballete.toString()">
+                  {{caballete}}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </li>
+
+          <li>
+            <label for="l1">LONGITUD 1: </label>
+            <input class="listado" id="l1" type="font-weight-bold" value={{formulario.getLongitud1()}}/>
+          </li>
+          <li>
+            <label for="l2">LONGITUD 2: </label>
+            <input class="listado" id="l2" type="font-weight-bold" value={{formulario.getLongitud2()}}/>
+          </li>
+          <li>
+            <label for="f_hojas">HOJAS: </label>
+            <input class="listado" id="f_hojas" type="font-weight-bold" value={{formulario.getHojas()}}/>
+          </li>
+          <li>
+            <label for="f_lote">LOTE: </label>
+            <input class="listado" id="f_lote" type="font-weight-bold" value={{formulario.getLote()}}/>
+          </li>
+        </ul>
+        <!-- <button (click)="avanzarFormulario()">COMPLETAR REGISTRO</button> -->
+      </form>
+    </div>
+
+
+    <div class="bloqueObtencionDatos">
+      <div>
+        <div class="bloqueCamara">
+          <ComponenteCamara #camara id=cc (propagar)="procesaPropagar($event)"></ComponenteCamara>
+        </div>
+        <button class="botonNav" #btnFoto *ngIf="!this.camara.isProvCaptured" (click)="ObtenerDatos()"> FOTO </button>
+        <!--<button class="botonNav" (click)="procesaPropagar('')"> Dibujar Plantilla</button>
+        <label>{{this.plantillaElegida?.ancho}} </label>
+        <label>{{this.plantillaElegida?.alto}} </label>  -->
+        <button class="botonNav" (click)="EnviarRegistro(this.formulario)" >ENVIAR REGISTRO</button>
+
+        <button class="botonNav" [routerLink]="['../ObtenerPlantilla']" > REELEGIR PLANTILLA</button>
+
+      </div>
+    </div>
+
+  </div>

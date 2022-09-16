@@ -1,0 +1,17 @@
+  <!---------------------------------------------->
+  <!-- BLOQUE ENCARGADO DE MOSTRAR COSAS CHULIS -->
+  <!---------------------------------------------->
+  <div id=b1>
+    <!-- --- Mostrar la camara con un rectangulo para marcar el area que revisará
+         el OCR para buscar el proveedor --- -->
+    <div id="contorno">
+      <canvas class="rectPlantilla" #canvasLienzo id="canvasLienzo" [width]="WIDTH" [height]="HEIGHT"></canvas>
+      <video class="colocadorVideo" #video id="video" [class.show]="!isProvCaptured" [class.hide]="isProvCaptured"  autoplay></video>
+      <canvas class="colocadorVideo" #canvasFoto id="canvasFoto" [class.show]="isProvCaptured" [class.hide]="!isProvCaptured" [width]="WIDTH" [height]="HEIGHT"></canvas>
+    </div>
+    <div>
+	    <button class="botonNav" *ngIf="isProvCaptured" (click)="removeCurrent()">REPETIR FOTO</button>
+      <br>
+
+    </div>
+  </div>

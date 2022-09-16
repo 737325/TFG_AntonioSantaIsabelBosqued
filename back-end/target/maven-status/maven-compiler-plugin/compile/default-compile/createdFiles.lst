@@ -1,0 +1,7 @@
+com\servidorAPELV\springbootServer\service\PlantillaServiceImpl.class
+com\servidorAPELV\springbootServer\repository\PlantillaRepository.class
+com\servidorAPELV\springbootServer\entity\Campo.class
+com\servidorAPELV\springbootServer\entity\Plantilla.class
+com\servidorAPELV\springbootServer\service\PlantillaService.class
+com\servidorAPELV\springbootServer\ServidorApelvApplication.class
+com\servidorAPELV\springbootServer\controller\PlantillaController.class

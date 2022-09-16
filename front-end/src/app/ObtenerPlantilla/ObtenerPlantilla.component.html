@@ -1,0 +1,26 @@
+<div id=b3>
+  <div class="topbar">
+    <img width="200vw" src="assets/logo_turomas.png" alt="Logo Empresa">
+  </div>
+
+  <h1 class="cabecera">BLOQUE 1: INDICAR PROVEEDOR Y PLANTILLA</h1>
+  <input [(ngModel)]="pruebaRetornoBD" type="string" placeholder="Resultado de retornar BD">
+
+  <!-- Listado de proveedores. FALTA HACER LOS PROVEEDORES MAS GRANDES Y EN NEGRITA. Consultar otros detalles visuales color etc -->
+  <div class=bloqueLista [class.show]="isCargadas" [class.hide]="!isCargadas">
+
+    <header class="titleLista"> Seleccione el proveedor correspondiente a la etiqueta del producto para ver las plantillas disponibles</header>
+    <mat-expansion-panel class="panelExpansion" *ngFor="let proveedor of this.providersMap.keys()">
+
+      <mat-expansion-panel-header>
+        {{proveedor}}
+      </mat-expansion-panel-header>
+
+      <mat-action-list *ngFor="let plantilla of this.providersMap.get(proveedor)">
+        <button class="plantilla" mat-list-item (click)="seleccionarPlantilla(plantilla)"> {{plantilla.nombre}} </button>
+      </mat-action-list>
+
+    </mat-expansion-panel>
+  </div>
+
+</div>

@@ -1,0 +1,86 @@
+.show {
+  display: block;
+}
+
+.hide {
+  display: none;
+}
+
+.topbar {
+  padding: 16px 0;
+  background-color: black;
+}
+
+.cabecera{
+  font-size:20px;
+  font-weight: bold;
+  padding-top: 1vh;
+  margin-left: 3vh;
+}
+
+.botonNav{
+  font-size: 16pt;
+  margin-top: 5px;
+  margin-bottom: 15px;
+  margin-left: 5%;
+  height:100;
+  z-index: 2;
+}
+
+.panelMateriales{
+  background: white;
+  font-size:16pt;
+  margin:7px;
+}
+
+.panelCaballetes{
+  background: white;
+  font-size:16pt;
+  margin:7px;
+}
+
+.listado{
+  font-size:16pt;
+  margin:7px;
+  border-color: #000000;
+}
+
+.aviso{
+  position: absolute;
+  text-align: center;
+  height: 5%;
+  top:15%;
+  left:30%;
+  right:30%;
+  font-size: 16pt;
+  font-weight: bold;
+  border: 2px solid black;
+  z-index: 1500;
+  background: rgba(201, 5, 250, 0.9);
+}
+
+.bloqueCamara{
+  float:left;
+  background:#000000;
+  z-index: index 6;
+  margin-left: 5vh;
+}
+
+.bloqueFormulario{
+  float:right;
+  margin-right:5vh;
+  left:50%;
+  z-index: index 4;
+  border: 5px solid black;
+  background:rgba(255, 255, 255, 0.75);
+}
+
+.bloqueador{
+  position: absolute;
+  left:0;
+  top:0;
+  width: 100%;
+  height: 100%;
+  z-index: 1000;
+  background: rgba(230, 255, 0, 0.15)
+}
