@@ -11,7 +11,7 @@ export class ApiServidorService {
 
   //URL del Servidor
   private urlServidor: string = "localhost:8080/api/plantillas";//localhost:8080/api/plantillas
-  public static API_ENDPOINT_BACKEND: string = "http://192.168.1.38:8080/api/plantillas";
+  public static API_ENDPOINT_BACKEND: string = "http://192.168.137.1:8080/api/plantillas"; //
   private peticion: string ="";
 
   constructor(private http: HttpClient, ){}
